@@ -1,6 +1,6 @@
 {
   "name": "@ckpack/js-utils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "常用的工具类函数",
   "repository": "https://github.com/chenkai0520/js-utils",
   "main": "es/index.js",
