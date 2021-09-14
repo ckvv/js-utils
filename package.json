@@ -12,7 +12,8 @@
     "docs": "rm -rf ./docs/* && typedoc ./src/index.ts",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "release": "standard-version",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
   },
   "keywords": [
     "utils",
