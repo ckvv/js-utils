@@ -65,8 +65,35 @@ const toRawType = (value: unknown) => {
   return toTypeString(value).slice(8, -1);
 };
 
+/**
+ * 获取指定范围随机数
+ * @param max 最大值
+ * @param min 最小值
+ * @param digits 保留的最大小数位数
+ * @returns 随机数
+ */
+const getRandomNum = (max = 1, min = 0, digits = 4) => {
+  return Number((min + Math.random() * (max - min)).toFixed(digits));
+};
+
+/**
+ * 获取随机字符串
+ * @param length 长度
+ * @param dictionary 随机数字典
+ * @returns 随机字符串
+ */
+const getRandomStr = (length:number, dictionary = '0123456789abcdefghijklmnopqrstuvwxyz') => {
+  let randomStr = '';
+  for (let index = 0; index < length; index++) {
+    randomStr += dictionary[getRandomNum(dictionary.length, 0, 0)];
+  }
+  return randomStr;
+};
+
 export {
   debounce,
   wait,
-  toRawType
+  toRawType,
+  getRandomNum,
+  getRandomStr
 };
