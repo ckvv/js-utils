@@ -5,16 +5,16 @@
  * @param options 可选参数,控制是否立即执行，中间过程是否执行，this作用域
  * @returns function
  */
-function debounce (callback: Function, wait: number, options : {
-  immediate ?: boolean,
-  middle ?: boolean,
-  thisArg ?: any,
+const debounce = (callback: Function, wait: number, options: {
+  immediate ? : boolean,
+  middle ? : boolean,
+  thisArg ? : any,
 } = {
   immediate: false,
   middle: true,
   thisArg: null
-}):Function {
-  let timer : ReturnType<typeof setTimeout>;
+}): Function => {
+  let timer: ReturnType < typeof setTimeout >;
   let restDate = new Date();
   const immediate = options.immediate !== false;
   const middle = options.middle !== false;
@@ -32,22 +32,41 @@ function debounce (callback: Function, wait: number, options : {
       restDate = new Date();
     }
   };
-}
+};
 
 /**
  * 阻塞当前执行n毫秒
  * @param wait 延迟时间
  * @returns promise
  */
-async function wait (wait:number) {
+const wait = async (wait: number) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);
     }, wait);
   });
-}
+};
+
+/**
+ * 返回参数类型
+ * @param value 参数
+ * @returns 是否是函数
+ */
+const toTypeString = (value: unknown) => {
+  return Object.prototype.toString.call(value);
+};
+
+/**
+ * 返回参数类型
+ * @param value 参数
+ * @returns type
+ */
+const toRawType = (value: unknown) => {
+  return toTypeString(value).slice(8, -1);
+};
 
 export {
   debounce,
-  wait
+  wait,
+  toRawType
 };
