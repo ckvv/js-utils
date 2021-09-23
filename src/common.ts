@@ -9,16 +9,10 @@ const debounce = (callback: Function, wait: number, options: {
   immediate ? : boolean,
   middle ? : boolean,
   thisArg ? : any,
-} = {
-  immediate: false,
-  middle: true,
-  thisArg: null
-}): Function => {
+} = {}): Function => {
+  const { immediate = false, middle = true, thisArg = null } = options;
   let timer: ReturnType < typeof setTimeout >;
   let restDate = new Date();
-  const immediate = options.immediate !== false;
-  const middle = options.middle !== false;
-  const thisArg = options.thisArg || null;
   return function (...args: any[]) {
     timer && clearTimeout(timer);
     const isFirst = !timer;
