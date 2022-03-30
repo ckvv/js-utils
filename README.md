@@ -5,5 +5,6 @@
 + node.js 依赖`node`环境的函数
 + browser.js 依赖`browser`环境的函数
 + common.js `node`、`browser`均能正常运行的函数
++ vueuse.js `vue`Hook函数
 
-# [Documentation](http://ckvv.github.io/js-utils/index.html)
+## [Documentation](http://ckpack.github.io/utils/)

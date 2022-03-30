@@ -1,8 +1,8 @@
 {
-  "name": "@ckpack/js-utils",
+  "name": "@ckpack/utils",
   "version": "0.0.5",
   "description": "常用的工具类函数",
-  "repository": "https://github.com/ckvv/js-utils",
+  "repository": "https://github.com/ckvv/utils",
   "main": "es/index.js",
   "types": "es/index.d.ts",
   "scripts": {
